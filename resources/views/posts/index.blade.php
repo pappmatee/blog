@@ -19,7 +19,9 @@
                     <div class="card mb-4">
                         <div class="card-body p-3">
                             <div class="row">
-                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                @foreach($posts as $post)
+                                    @dd($post)
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
@@ -27,10 +29,14 @@
                                             </a>
                                         </div>
                                         <div class="card-body px-1 pb-0">
-                                            <p class="text-gradient text-dark mb-2 text-sm">Project #2</p>
+                                            <p class="text-gradient text-dark mb-2 text-sm">
+                                                @foreach($post->categories as $category)
+                                                    {{ $category }}
+                                                @endforeach
+                                            </p>
                                             <a href="javascript:;">
                                                 <h5>
-                                                    Modern
+                                                    {{ $post->title }}
                                                 </h5>
                                             </a>
                                             <p class="mb-4 text-sm">
@@ -56,7 +62,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                @endforeach
+                                {{--<div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
@@ -166,7 +173,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
 
                             </div>
                         </div>

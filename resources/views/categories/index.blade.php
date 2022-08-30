@@ -20,7 +20,7 @@
                                                 <input type="text" name="name" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column mb-3">
                                             <label>Parent</label>
                                             <div class="mb-3">
                                                 <select name="parent" class="form-control">
@@ -31,6 +31,7 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <button type="submit" class="btn btn-primary btn-sm mb-0">Add category</button>
                                     </div>
                                 </div>
                             </div>
@@ -58,12 +59,6 @@
                         </div>
                     </div>
             </div>
-
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-sm mb-0">Add category</button>
-                    </div>
-                </div>
         </div>
         </form>
 @endsection
