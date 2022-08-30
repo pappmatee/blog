@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Category extends Model
+class Comment extends Model
 {
     use HasFactory;
 
     public function parent(): HasOne
     {
-        $this->hasOne(Category::class, 'id','parent_id');
+        $this->hasOne(Comment::class, 'id','parent_id');
     }
 
-    public function subCategories(): HasMany
+    public function replies(): HasMany
     {
-        return $this->hasMany(Category::class, 'parent_id', 'id');
+        return $this->hasMany(Comment::class, 'parent_id', 'id');
     }
 }

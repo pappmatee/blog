@@ -16,7 +16,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->morphs('contentable');
+            $table->string('title');
+            $table->text('body');
             $table->timestamps();
         });
     }
